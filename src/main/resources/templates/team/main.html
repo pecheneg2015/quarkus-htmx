@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Футбольные команды</title>
+    <meta name="description" content="Simple htmx">
+    <meta name="author" content="Dmitriy Pechenin">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.9"></script>
+
+</head>
+<style>
+    html, body {
+        height: 100%;
+    }
+</style>
+<body class="flex flex-col gap-10 p-10">
+<a href="/country">Назад</a>
+<h1 class="text-2xl font-bold">Список команд</h1>
+
+<div><button  hx-get="/teams/{code}/add/form" hx-target="body" hx-swap="beforeend">Добавить</button></div>
+{#include team/items.html items=data /}
+</div>
+</body>
+</html>

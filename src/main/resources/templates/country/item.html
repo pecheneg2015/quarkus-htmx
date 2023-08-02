@@ -1,0 +1,9 @@
+<div class="grid grid-cols-12 shadow-lg px-4 py-2 rounded-md border border-slate-200" id={country.code}>
+    <p class="col-span-1">{country.code}</p>
+    <p  class="col-span-8 truncate">{country.name}</p>
+    <div  class="col-span-3 ">
+        <button  hx-swap="outerHTML" hx-target="#{country.code}" hx-delete="/country/{country.code}">Удалить</button>
+        <button  hx-swap="beforeend" hx-target="body" hx-get="/country/update/form/{country.code}">Изменить</button>
+        <a  href="/teams/{country.code}">Просмотр</a>
+    </div>
+</div>
